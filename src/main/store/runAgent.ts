@@ -177,6 +177,11 @@ export const performAction = async (action: NextAction) => {
     case 'key':
       const keyMap = {
         Return: Key.Enter,
+        ctrl: Key.LeftControl,
+        shift: Key.LeftShift,
+        alt: Key.LeftAlt,
+        s: Key.S,
+        // Add more key mappings as needed
       };
       const keys = action.text.split('+').map((key) => {
         const mappedKey = keyMap[key as keyof typeof keyMap];
